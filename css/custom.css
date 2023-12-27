@@ -1,0 +1,6 @@
+/*自定义颜色*/
+:root{
+	--style-border-always: #74b9ff;
+	--ljq-hover-bg: #74b9ff; 
+	--ljq-pagination-font-color: #858585;
+}
