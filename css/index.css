@@ -302,20 +302,24 @@ template {
   object-fit: cover;
 }
 .list-beauty,
-.category-lists ul {
+.category-lists ul,
+#algolia-search .search-dialog .ais-Hits-list {
   list-style: none;
 }
 .list-beauty li,
-.category-lists ul li {
+.category-lists ul li,
+#algolia-search .search-dialog .ais-Hits-list li {
   position: relative;
   padding: 0.12em 0.4em 0.12em 1.4em;
 }
 .list-beauty li:hover:before,
-.category-lists ul li:hover:before {
+.category-lists ul li:hover:before,
+#algolia-search .search-dialog .ais-Hits-list li:hover:before {
   border-color: var(--pseudo-hover);
 }
 .list-beauty li:before,
-.category-lists ul li:before {
+.category-lists ul li:before,
+#algolia-search .search-dialog .ais-Hits-list li:before {
   position: absolute;
   top: 0.67em;
   left: 0;
@@ -3596,11 +3600,6 @@ h1.page-title + .tag-cloud-list {
   height: 60px;
   background: 0;
 }
-#page-header.not-top-img #nav {
-  background: rgba(255,255,255,0.8);
-  -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
-  box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
-}
 #page-header.not-top-img #nav a,
 #page-header.not-top-img #nav .site-name {
   color: var(--font-color);
@@ -3830,7 +3829,6 @@ h1.page-title + .tag-cloud-list {
 #nav .menus_items .menus_item {
   position: relative;
   display: inline-block;
-  padding: 0 0 0 14px;
 }
 #nav .menus_items .menus_item:hover .menus_item_child {
   display: block;
@@ -3879,7 +3877,7 @@ h1.page-title + .tag-cloud-list {
   list-style: none;
 }
 #nav .menus_items .menus_item .menus_item_child li:hover {
-  background: var(--text-bg-hover);
+  background: var(--ljq-hover-bg);
 }
 #nav .menus_items .menus_item .menus_item_child li:first-child {
   border-top-left-radius: 5px;
@@ -3893,7 +3891,7 @@ h1.page-title + .tag-cloud-list {
   display: inline-block;
   padding: 8px 16px;
   width: 100%;
-  color: var(--font-color) !important;
+  color: var(--font-color);
   text-shadow: none !important;
 }
 #nav.hide-menu #toggle-menu {
@@ -6783,6 +6781,135 @@ blockquote.pullquote.right {
 #article-container .timeline + .timeline {
   margin-top: -20px;
 }
+[data-theme='dark'] {
+  --global-bg: #0d0d0d;
+  --font-color: rgba(255,255,255,0.7);
+  --hr-border: rgba(255,255,255,0.4);
+  --hr-before-color: rgba(255,255,255,0.7);
+  --search-bg: #121212;
+  --search-input-color: rgba(255,255,255,0.7);
+  --search-a-color: rgba(255,255,255,0.7);
+  --preloader-bg: #88fff6;
+  --preloader-color: rgba(255,255,255,0.7);
+  --tab-border-color: #2c2c2c;
+  --tab-botton-bg: #2c2c2c;
+  --tab-botton-color: rgba(255,255,255,0.7);
+  --tab-button-hover-bg: #383838;
+  --tab-button-active-bg: #121212;
+  --card-bg: #121212;
+  --sidebar-bg: #121212;
+  --btn-hover-color: #787878;
+  --btn-color: rgba(255,255,255,0.7);
+  --btn-bg: #1f1f1f;
+  --text-bg-hover: #383838;
+  --light-grey: rgba(255,255,255,0.7);
+  --dark-grey: rgba(255,255,255,0.2);
+  --white: rgba(255,255,255,0.9);
+  --text-highlight-color: rgba(255,255,255,0.9);
+  --blockquote-color: rgba(255,255,255,0.7);
+  --blockquote-bg: #2c2c2c;
+  --reward-pop: #2c2c2c;
+  --toc-link-color: rgba(255,255,255,0.6);
+  --scrollbar-color: #525252;
+  --timeline-bg: #1f1f1f;
+  --zoom-bg: #121212;
+  --mark-bg: rgba(0,0,0,0.6);
+}
+[data-theme='dark'] #web_bg:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  content: '';
+}
+[data-theme='dark'] #article-container code {
+  background: #2c2c2c;
+}
+[data-theme='dark'] #article-container pre > code {
+  background: #171717;
+}
+[data-theme='dark'] #article-container figure.highlight {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+[data-theme='dark'] #article-container .note code {
+  background: rgba(27,31,35,0.05);
+}
+[data-theme='dark'] #article-container .aplayer {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] #article-container kbd {
+  border-color: #696969;
+  background-color: #525252;
+  color: #e2f1ff;
+}
+[data-theme='dark'] #page-header.nav-fixed > #nav,
+[data-theme='dark'] #page-header.not-top-img > #nav {
+  background: rgba(18,18,18,0.8);
+  -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
+  box-shadow: 0 5px 6px -5px rgba(133,133,133,0);
+}
+[data-theme='dark'] #post-comment .comment-switch {
+  background: #2c2c2c !important;
+}
+[data-theme='dark'] #post-comment .comment-switch #switch-btn {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] .note {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] .hide-button,
+[data-theme='dark'] .btn-beautify,
+[data-theme='dark'] .hl-label,
+[data-theme='dark'] .post-outdate-notice,
+[data-theme='dark'] .error-img,
+[data-theme='dark'] #article-container iframe,
+[data-theme='dark'] .gist,
+[data-theme='dark'] .ads-wrap {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] img {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] #aside-content .aside-list > .aside-list-item:not(:last-child) {
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+}
+[data-theme='dark'] #gitalk-container {
+  filter: brightness(0.8);
+}
+[data-theme='dark'] #gitalk-container svg {
+  fill: rgba(255,255,255,0.9) !important;
+}
+[data-theme='dark'] #disqusjs #dsqjs:hover,
+[data-theme='dark'] #disqusjs #dsqjs:focus,
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-tab-active,
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-no-comment {
+  color: rgba(255,255,255,0.7);
+}
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-order-label {
+  background-color: #1f1f1f;
+}
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-post-body {
+  color: rgba(255,255,255,0.7);
+}
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-post-body code,
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-post-body pre {
+  background: #2c2c2c;
+}
+[data-theme='dark'] #disqusjs #dsqjs .dsqjs-post-body blockquote {
+  color: rgba(255,255,255,0.7);
+}
+[data-theme='dark'] #artitalk_main #lazy {
+  background: #121212;
+}
+[data-theme='dark'] #operare_artitalk .c2 {
+  background: #121212;
+}
+@media screen and (max-width: 900px) {
+  [data-theme='dark'] #card-toc {
+    background: #1f1f1f;
+  }
+}
 .read-mode {
   --font-color: #4c4948;
   --readmode-light-color: #fff;
@@ -7052,4 +7179,87 @@ blockquote.pullquote.right {
   z-index: 1000;
   display: none;
   background: rgba(0,0,0,0.6);
+}
+#algolia-search .search-dialog .ais-SearchBox input {
+  padding: 5px 14px;
+  width: 100%;
+  outline: none;
+  border: 2px solid #49b1f5;
+  border-radius: 40px;
+  background: var(--search-bg);
+  color: var(--search-input-color);
+}
+#algolia-search .search-dialog .ais-Hits-list {
+  margin: 0;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Hits-list a {
+  color: var(--search-a-color);
+}
+#algolia-search .search-dialog .ais-Hits-list a:hover {
+  color: #49b1f5;
+}
+#algolia-search .search-dialog .ais-Hits-list mark {
+  background: transparent;
+  color: #f47466;
+  font-weight: bold;
+}
+#algolia-search .search-dialog .algolia-hits-item-title {
+  font-weight: 600;
+}
+#algolia-search .search-dialog .algolia-hit-item-content {
+  margin: 0 0 8px;
+  word-break: break-word;
+}
+#algolia-search .search-dialog .ais-Pagination {
+  margin: 15px 0 0;
+  padding: 0;
+  text-align: center;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item {
+  display: inline;
+  margin: 0 4px;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a {
+  background: #74b9ff;
+  color: #eee;
+  cursor: default;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--disabled {
+  visibility: hidden;
+}
+#algolia-search .search-dialog #algolia-hits > div {
+  overflow-y: scroll;
+  margin: 0 -20px;
+  padding: 0 22px;
+  max-height: calc(80vh - 240px);
+}
+@media screen and (max-width: 768px) {
+  #algolia-search .search-dialog #algolia-hits > div {
+    max-height: none;
+    height: calc(var(--search-height) - 265px);
+  }
+}
+#algolia-search .search-dialog #algolia-info div {
+  display: inline;
+}
+#algolia-search .search-dialog #algolia-info .algolia-poweredBy {
+  float: right;
+  vertical-align: text-top;
+}
+#algolia-search .search-dialog #algolia-info .algolia-poweredBy svg {
+  height: 1.1em;
 }

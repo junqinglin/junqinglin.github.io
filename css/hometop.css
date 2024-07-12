@@ -1,0 +1,17 @@
+#home_top {
+	margin: 0 auto;
+  	padding: 40px 15px;
+ 	max-width: 1200px;
+	width: 100%;
+    background-image: url('https://pic.linjq.top/img/index_img.jpg');
+}
+@media screen and (max-width: 768px) {
+  #home_top {
+    padding: 20px 5px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #home_top {
+    max-width: 70%;
+  }
+}
