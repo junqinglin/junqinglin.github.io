@@ -5,8 +5,17 @@
     display: flex;
     flex-wrap:nowrap;
 }
-#nav-right div:hover a{
-    color: var(--ljq-hover-bg)!important;
+#nav-right >div a{
+    padding:0.35rem;
+    border-radius:20px;
+}
+#nav-right >div:hover a{
+    color: white!important;
+    background: var(--ljq-hover-bg);
+}
+#nav-right >div{
+    margin-left: 0.6rem;
+    font-size: 1.25rem;
 }
 #nav *::after{
     background-color: transparent!important;
