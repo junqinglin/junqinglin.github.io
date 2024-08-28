@@ -2305,7 +2305,7 @@ figure.highlight pre .javascript .function {
   flex: 1 auto;
   margin: 0 auto;
   padding: 2rem 1rem;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
 }
 @media screen and (max-width: 900px) {
@@ -2506,7 +2506,7 @@ figure.highlight pre .javascript .function {
   -webkit-align-items: center;
   align-items: center;
   overflow: hidden;
-  height: 16.8em;
+  height: 21.5em;
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item {
