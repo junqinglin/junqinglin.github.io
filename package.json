@@ -16,7 +16,7 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-algoliasearch": "^2.0.1",
     "hexo-butterfly-article-double-row": "^1.0.2",
-    "hexo-butterfly-tag-plugins-plus": "^1.0.17",
+    "hexo-butterfly-tag-plugins-plus": "^1.0.18",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
