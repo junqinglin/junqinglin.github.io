@@ -1,0 +1,122 @@
+/* 文章双栏布局 */
+#recent-posts {
+    margin-top: -1rem;
+    /*头部为空时抵消间隔，若有磁贴或日历请注释掉该行*/
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    /*规定灵活的项目在必要的时候拆行或拆列。*/
+    justify-content: space-between;
+    /*。*/
+}
+
+@media screen and (min-width: 1200px) {
+    #recent-posts&gt;.recent-post-item {
+        /*max-height:324px;*/
+        /*文章容器最大高度*/
+        margin-top: auto;
+        /*最小间距*/
+        display: inline-block;
+        height: auto;
+        width: 49%;
+        /*文章容器容器宽度*/
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #recent-posts&gt;.recent-post-item {
+        width: 100%; 
+        /* 宽度最大1200px时切换成单栏布局 */
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #recent-posts&gt;.recent-post-item .post_cover {
+        width: 100%;
+        /*图片封面宽度*/
+        height: 225px;
+        /*图片封面高度*/
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #recent-posts&gt;.recent-post-item .post_cover {
+        height: 200px;
+        /* 宽度最大1200px时单栏下文章封面高度200px */
+        width: 75%;
+    }
+}
+
+#recent-posts&gt;.recent-post-item .post_cover img.post_bg {
+    width: 100%;
+    /*图片宽度*/
+    height: 100%;
+    /*图片高度*/
+}
+
+#recent-posts&gt;.recent-post-item&gt;.recent-post-info&gt;.content {
+    display: none;
+    /*隐藏文章详情*/
+}
+
+/* 仅在1200px以上使用纵向布局
+    防止单栏时文章信息还是纵向*/
+@media screen and (min-width: 1200px) {
+    #recent-posts&gt;.recent-post-item {
+        -webkit-flex-direction: column;
+        /*容器内部纵向排列*/
+        -ms-flex-direction: column;
+        /*容器内部纵向排列*/
+        flex-direction: column;
+        /*容器内部纵向排列*/
+    }
+}
+
+#recent-posts&gt;.recent-post-item .left_radius {
+    border-radius: 12px 12px 0 0;
+    /*圆角修改*/
+}
+
+#recent-posts&gt;.recent-post-item .right_radius {
+    border-radius: 12px 12px 0 0;
+    /*圆角修改*/
+}
+
+.recent-post-item {
+    height: auto !important;
+    /*容器高度自动*/
+}
+
+/* 仅在1200px以上的宽屏双栏布局下
+    纵向布局文章信息*/
+@media screen and (min-width:1200px) {
+    #recent-posts&gt;.recent-post-item&gt;.recent-post-info&gt;.article-title {
+        margin-top: 1rem;
+        /*控制标题的上间距*/
+        margin-bottom: 0.3rem;
+        /*控制标题的下间距*/
+        color: var(--text-highlight-color);
+        font-size: 1.2em;
+        /*控制标题的字体大小*/
+        line-height: 1.4;
+        /*控制标题的行高*/
+
+    }
+}
+
+/* 文章信息高度 */
+#recent-posts&gt;.recent-post-item&gt;.recent-post-info {
+    height: 174px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    /* overflow: hidden; */
+}
+
+@media screen and (min-width: 1200px) {
+    #recent-posts&gt;.recent-post-item&gt;.recent-post-info&gt;.article-meta-wrap {
+        margin-bottom: 1.5rem;
+        /*控制标题meta信息的底部间距*/
+    }
+}
