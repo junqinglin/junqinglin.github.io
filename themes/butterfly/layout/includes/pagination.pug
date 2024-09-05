@@ -1,0 +1,53 @@
+-
+  var options = {
+    prev_text: '<i class="fas fa-chevron-left fa-fw"></i>',
+    next_text: '<i class="fas fa-chevron-right fa-fw"></i>',
+    mid_size: 1,
+    escape: false
+  }
+  var _options = {
+    prev_text: '<i class="fas fa-chevron-left fa-fw"></i></i><div class="pagination_tips_prev">上页</div>',
+    next_text: '<div class="pagination_tips_next">下页</div><i class="fas fa-chevron-right fa-fw"></i>',
+    mid_size: 1,
+    escape: false
+  }
+
+
+if is_post()
+  - let prev = theme.post_pagination === 1 ? page.prev : page.next
+  - let next = theme.post_pagination === 1 ? page.next : page.prev
+  nav#pagination.pagination-post
+    if(prev)
+      - var hasPageNext = next ? 'pull-left' : 'pull-full'
+      .prev-post(class=hasPageNext)
+        a(href=url_for(prev.path) title=prev.title)
+          if prev.cover_type === 'img'
+            img.cover(src=url_for(prev.cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of previous post')
+          else
+            .cover(style=`background: ${prev.cover || 'var(--default-bg-color)'}`)
+          .pagination-info
+            .label=_p('pagination.prev')
+            .prev_info=prev.title
+          
+    if(next)
+      - var hasPagePrev = prev ? 'pull-right' : 'pull-full'
+      .next-post(class=hasPagePrev)
+        a(href=url_for(next.path) title=next.title)
+          if next.cover_type === 'img'
+            img.cover(src=url_for(next.cover) onerror=`onerror=null;src='${url_for(theme.error_img.post_page)}'` alt='cover of next post')
+          else
+            .cover(style=`background: ${next.cover || 'var(--default-bg-color)'}`)
+          .pagination-info
+            .label=_p('pagination.next')
+            .next_info=next.title
+else
+  nav#pagination
+    .pagination
+      if is_home()
+        - options.format = 'page/%d/#content-inner'
+      !=paginator(_options)
+      if is_home()
+        .toPageGroup
+          input#toPageText(maxlength="3" oninput="value=value.replace(/[^0-9]/g,'')" onkeyup="if (this.value === '0') this.value = ''" title="跳转到指定页面")
+          a#toPageButton(data-pjax-state="" onclick="pagination_modify.toPage()")
+            i.fa-solid.fa-angles-right

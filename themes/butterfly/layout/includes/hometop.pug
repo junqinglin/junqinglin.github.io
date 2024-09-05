@@ -1,0 +1,26 @@
+if is_home()
+  #hometop
+    #hometop-content(style='background-image: url(' + theme.default_hometop_img + ');')
+      h1#site-title=config.title
+      if theme.subtitle.enable
+        - var loadSubJs = true
+        #site-subtitle
+          span#subtitle
+      button#toggleButton.toggle-button(onclick='toggleSlider()')
+        i.fas.fa-chevron-down
+      #sliderOverlay.slider-overlay
+        .swiper-container
+          .swiper-wrapper
+            each i in site.data.slider
+              .swiper-slide
+                .swiper-slide-mask(style='background-image: url(' + i.cover + ');')
+                .swiper-slide-content
+                  p.swiper-content-title.swiper-content-item(onclick='pjax.loadUrl(\'' + i.link + '\')')= i.title
+                  p.swiper-content-time.swiper-content-item= i.timeline
+                  p.swiper-content-description.swiper-content-item= i.description
+          .swiper-pagination
+          .swiper-button-next.swiper-buttons
+          .swiper-button-prev.swiper-buttons
+
+  script(defer='' src=url_for(theme.CDN.option.swiper_js))
+  script(defer='' data-pjax='' src=url_for(theme.CDN.option.hometop_js))
