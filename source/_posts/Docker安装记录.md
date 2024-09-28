@@ -13,8 +13,7 @@ mathjax:
 aside: 
 description: 自己安装Docker的记录
 ---
-
-# step1 换源
+# step1 Centos7换yum源
 1. 备份：
 ```Bash
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -60,5 +59,31 @@ systemctl enable docker
 # 执行docker ps命令，如果不报错，说明安装启动成功
 docker ps
 ```
-# Step5 配置镜像加速
+# ~~Step5 配置镜像加速（已失效）~~
 在**阿里云镜像服务->镜像工具->镜像加速器**中找到配置文档说明，按照上面的命令运行即可。
+# Step5 配置镜像加速
+```
+# 创建目录
+mkdir -p /etc/docker
+
+# 复制内容，注意把其中的镜像加速地址改成你自己的
+tee /etc/docker/daemon.json <<-'EOF'
+{
+    "registry-mirrors": [
+        "http://hub-mirror.c.163.com",
+        "https://mirrors.tuna.tsinghua.edu.cn",
+        "http://mirrors.sohu.com",
+        "https://ustc-edu-cn.mirror.aliyuncs.com",
+        "https://ccr.ccs.tencentyun.com",
+        "https://docker.m.daocloud.io",
+        "https://docker.awsl9527.cn"
+    ]
+}
+EOF
+
+# 重新加载配置
+systemctl daemon-reload
+
+# 重启Docker
+systemctl restart docker
+```

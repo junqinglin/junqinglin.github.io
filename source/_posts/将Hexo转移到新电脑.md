@@ -62,7 +62,7 @@ ssh-keygen -t rsa -C "你的邮箱"
 ```
 可以看到C盘下已经生成了私钥(id_rsa)和公钥(id_rsa.pub)：
 ![image.png](https://pic.linjq.top/img/202409051548414.png)
-打开`github->setting->SSH and GPG keys-><font style="color:rgb(31, 35, 40);">Add new SSH Key</font>`，把`id_rsa.pub`中的内容粘贴进去。
+打开`github->setting->SSH and GPG keys->Add new SSH Key`，把`id_rsa.pub`中的内容粘贴进去。
 输入命令测试连接：
 ```
 ssh -T git@github.com
@@ -116,3 +116,8 @@ rm -rf node_modules # 删除项目目录下的 node_modules 目录，其中包�
 npm install --force # 强制重新安装所有包，即使它们已经存在于 node_modules 中
 ```
 6. 之前安装的插件需要重新安装，这里差一个生成唯一链接的插件`abbrlink`：`npm install hexo-abbrlink --save`，使用`hexo g`后会看到原post会生成一个`abbrlink`属性。
+# 同步
+当任一电脑上更新并推送到GitHub仓库时，另一台电脑可以使用以下命令来进行拉取最新代码：
+```
+git pull origin hexo_source
+```
