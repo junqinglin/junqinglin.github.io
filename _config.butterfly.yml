@@ -49,37 +49,37 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://pic.linjq.top/img/avatar.jpg
+  img: https://img.linjq.top/avatar.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: false #https://pic.linjq.top/img/index_img.jpg
+index_img: false #https://img.linjq.top/index_img.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://pic.linjq.top/img/top_img.jpg
+default_top_img: https://img.linjq.top/top_img.jpg
 
 # The banner image of archive page
-archive_img: https://pic.linjq.top/img/top_img.jpg
+archive_img: https://img.linjq.top/top_img.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://pic.linjq.top/img/top_img.jpg
+tag_img: https://img.linjq.top/top_img.jpg
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img: https://pic.linjq.top/img/top_img.jpg
+tag_per_img: https://img.linjq.top/top_img.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://pic.linjq.top/img/top_img.jpg
+category_img: https://img.linjq.top/top_img.jpg
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img: https://pic.linjq.top/img/top_img.jpg
+category_per_img: https://img.linjq.top/top_img.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -92,7 +92,7 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover: 
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - https://pic.linjq.top/img/default_post_cover.png
+    - https://img.linjq.top/default_post_cover.png
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -908,7 +908,7 @@ pangu:
 lazyload:
   enable: true
   field: site # site/post
-  placeholder: https://pic.linjq.top/img/lazyload.gif
+  placeholder: https://img.linjq.top/lazyload.gif
   blur: true
 
 # PWA
@@ -1040,4 +1040,4 @@ CDN:
 
 ########## 自定义属性 ##########
 # hometop_img
-default_hometop_img: https://pic.linjq.top/img/202407171041498.jpg
+default_hometop_img: https://img.linjq.top/202407171041498.jpg

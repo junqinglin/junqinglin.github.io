@@ -10,8 +10,8 @@ tags:
   - Butterfly
 mathjax: 
 aside: 
-cover: https://pic.linjq.top/img/default_post_cover.png
-top_img: https://pic.linjq.top/img/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
 description: 博客自定义全局字体实现
 ---
 # Step1
@@ -29,7 +29,7 @@ description: 博客自定义全局字体实现
 }
 ```
 ``font-family``可以自定义字体名，``url``里面写自己字体包的名字。
-![](https://pic.linjq.top/img/202407091645665.png)
+![](https://img.linjq.top/202407091645665.png)
 
 # Step3
 在配置文件``_config.butterfly.yml``中引入css
@@ -48,4 +48,4 @@ font:
 ```
 
 # 效果
-![](https://pic.linjq.top/img/202407091645666.png)
+![](https://img.linjq.top/202407091645666.png)

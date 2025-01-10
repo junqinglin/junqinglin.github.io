@@ -1,8 +1,8 @@
 ---
 title: Hexo-Butterfly魔改汇总
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 abbrlink: b1c26afa
 date: 2023-12-27 18:31:53
 categories:
@@ -18,7 +18,7 @@ description: 此页收集汇总了一些大佬的魔改教程，同时也包含�
 
 # 自定义页数跳转
 {% folding blue,效果 %}
-![](https://pic.linjq.top/img/202407091645668.png)
+![](https://img.linjq.top/202407091645668.png)
 {% endfolding %}
 {% folding blue,教程 %}
 可参考[Butterfly的魔改教程：自定页数跳转 | 爱吃肉的猫 (meuicat.com)](https://meuicat.com/blog/62/index.html)
@@ -26,7 +26,7 @@ description: 此页收集汇总了一些大佬的魔改教程，同时也包含�
 
 # 评论系统
 {% folding blue,效果 %}
-![image.png](https://pic.linjq.top/img/202407091744518.png)
+![image.png](https://img.linjq.top/202407091744518.png)
 {% endfolding %}
 {% folding blue,教程 %}
 可参考[基于 Hexo 键入评论功能 | 唐志远 (fe32.top)](https://fe32.top/articles/hexo1611/)

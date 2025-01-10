@@ -120,9 +120,12 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repository: git@github.com:junqinglin/junqinglin.github.io.git
-  branch: main
+  - type: git
+    repository: git@github.com:junqinglin/junqinglin.github.io.git
+    branch: main
+  - type: git
+    repository: git@43.139.30.246:/var/repo/hexo.git
+    branch: main 
 
 kramed:
   gfm: true

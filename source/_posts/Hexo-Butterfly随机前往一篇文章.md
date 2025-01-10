@@ -1,8 +1,8 @@
 ---
 title: Hexo-Butterfly随机前往一篇文章
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 abbrlink: 83dcefb7
 date: 2024-07-14 17:00:07
 categories:

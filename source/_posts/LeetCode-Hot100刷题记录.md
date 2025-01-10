@@ -1,8 +1,8 @@
 ---
 title: LeetCode-Hot100刷题记录
 auther: ljq
-top_img: 'https://pic.linjq.top/img/top_img.jpg'
-cover: 'https://pic.linjq.top/img/default_post_cover.png'
+top_img: 'https://img.linjq.top/top_img.jpg'
+cover: 'https://img.linjq.top/default_post_cover.png'
 categories:
   - 算法
 tags:
@@ -742,6 +742,46 @@ class Solution {
     }
 }
 ```
+## [搜索二维矩阵 II](https://leetcode.cn/problems/search-a-2d-matrix-ii/)
+### 简介
+* 难度: {% label 中等 orange %}
+* 其他Tags: 无
+* 刷题日期:  2024.11.23
+* 是否做出: ❎
+
+### 思路
+方法一：对每一行采用二分查找
+方法二：Z 字形查找(详见官方题解)
+### 代码
+```
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        for (int[] row : matrix) {
+            int index = search(row, target);
+            if (index >= 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int search(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+            int num = nums[mid];
+            if (num == target) {
+                return mid;
+            } else if (num > target) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
 
 
 # 链表
@@ -814,6 +854,49 @@ class Solution {
     }
 }
 ```
+## [题目标题]
+### 简介
+* 难度: {% label 简单 green %}、{% label 中等 orange %}、{% label 困难 red %}
+* 其他Tags: {% label xx blue %}或无
+* 刷题日期: 
+* 是否做出: ✅ or ❎
 
+### 思路
+最容易想到的方法是吧链表的元素复制到数组中去，然后双指针判断。
+题解还有一个比较妙的方法是通过快慢指针，找到中间结点，然后把后半部分反转，最后依次比较是否相同。
+### 代码
+```
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        List<Integer> vals = new ArrayList<Integer>();
 
-、
+        // 将链表的值复制到数组中
+        ListNode currentNode = head;
+        while (currentNode != null) {
+            vals.add(currentNode.val);
+            currentNode = currentNode.next;
+        }
+
+        // 使用双指针判断是否回文
+        int front = 0;
+        int back = vals.size() - 1;
+        while (front < back) {
+            if (!vals.get(front).equals(vals.get(back))) {
+                return false;
+            }
+            front++;
+            back--;
+        }
+        return true;
+    }
+}```

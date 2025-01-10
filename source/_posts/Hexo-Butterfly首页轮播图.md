@@ -1,8 +1,8 @@
 ---
 title: Hexo-Butterfly首页轮播图
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 abbrlink: cf15f90b
 date: 2024-07-10 16:02:25
 categories:
@@ -261,17 +261,17 @@ var hometop_swiper = new Swiper('.swiper-container', {
 # Step4 新建配置文件
 在`[BLOG ROOT]\source\_data`下新建`slider.yml`, 填入自己想放在轮播图里面的文章的信息:
 ```
-- cover: https://pic.linjq.top/img/top_img.jpg
+- cover: https://img.linjq.top/top_img.jpg
   timeline: '2024-01-15' # 日期，需要用''包裹
   link: /articles/db2d9172/
   title: JWT令牌技术
   description: 登录认证常用技术-JWT技术介绍
-- cover: https://pic.linjq.top/img/top_img.jpg
+- cover: https://img.linjq.top/top_img.jpg
   timeline: '2024-03-25'
   link: /articles/2454e4a5/
   title: 自定义注解，通过AOP实现公共字段填充
   description: 简要介绍反射、注解、AOP相关知识，并介绍如何通过AOP实现公共字段填充
-- cover: https://pic.linjq.top/img/top_img.jpg
+- cover: https://img.linjq.top/top_img.jpg
   timeline: '2023-12-23'
   link: /articles/216710e/
   title: Hexo-Butterfly主题的加载动画修改
@@ -295,7 +295,7 @@ hometop_js: /js/hometop.js
 ```
 ########## 自定义属性 ##########
 # hometop_img
-default_hometop_img: https://pic.linjq.top/img/202407171041498.jpg
+default_hometop_img: https://img.linjq.top/202407171041498.jpg
 ```
 # 参考文章
 [Swiper Bar | Akilarの糖果屋](https://akilar.top/posts/8e1264d1/)

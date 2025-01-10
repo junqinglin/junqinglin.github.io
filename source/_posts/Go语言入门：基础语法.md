@@ -1,16 +1,17 @@
 ---
 title: Go语言入门：基础语法
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
-date: 2024-11-02 21:07:15
+top_img: 'https://img.linjq.top/top_img.jpg'
+cover: 'https://img.linjq.top/default_post_cover.png'
 categories:
   - 后端
 tags:
   - Golang
-mathjax: 
-aside: 
 description: Go语言的基础语法介绍
+abbrlink: 29d80bdb
+date: 2024-11-02 21:07:15
+mathjax:
+aside:
 ---
 # 什么是Go语言
 Go语言，又称为Golang，是一种由Google开发的开源编程语言。它以简洁、高效、并发支持而闻名，特别适合于构建高性能的网络服务和分布式系统。Go语言在语法上类似于C语言，但提供了垃圾回收机制和内存安全特性，简化了内存管理。Go语言还内置了丰富的标准库，支持多种编程范式，包括面向对象、过程式和函数式编程。由于其编译速度快、执行效率高，Go语言被广泛应用于云计算、微服务架构、区块链技术等领域。

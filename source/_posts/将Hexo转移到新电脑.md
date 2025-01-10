@@ -1,8 +1,8 @@
 ---
 title: 将Hexo转移到新电脑
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 categories:
   - 前端
 tags:
@@ -16,24 +16,24 @@ aside:
 # 安装node.js
 
 1. 首先官网下载node.js[Node.js — Run JavaScript Everywhere (nodejs.org)](https://nodejs.org/en)，一路next即可。
-![image.png](https://pic.linjq.top/img/202409051523740.png)
+![image.png](https://img.linjq.top/202409051523740.png)
 2. 在安装目录下新建两个文件夹node_cache(缓存路径)和node_global(全局的安装路径)
-![image.png](https://pic.linjq.top/img/202409051524880.png)
+![image.png](https://img.linjq.top/202409051524880.png)
 
 3. 接下来添加环境变量：
 + 首先新建系统变量NODE_HOME
-![image.png](https://pic.linjq.top/img/202409051524407.png)
+![image.png](https://img.linjq.top/202409051524407.png)
 + 接着编辑Path系统变量，删除原有的D:\NodeJs，添加一下三个：
-![image.png](https://pic.linjq.top/img/202409051525931.png)
+![image.png](https://img.linjq.top/202409051525931.png)
 + 编辑用户变量，把`C:\Users\86134\AppData\Roaming\npm`改成`D:\NodeJs\node_global`
-![image.png](https://pic.linjq.top/img/202409051525864.png)
-![image.png](https://pic.linjq.top/img/202409051526005.png)
+![image.png](https://img.linjq.top/202409051525864.png)
+![image.png](https://img.linjq.top/202409051526005.png)
 4. 下面配置全局安装路径和缓存路径，在cmd下输入以下命令：
-![image.png](https://pic.linjq.top/img/202409051526752.png)
+![image.png](https://img.linjq.top/202409051526752.png)
 5. 输入命令`npm config set registry [https://registry.npmmirror.com](https://registry.npmmirror.com)`配置淘宝镜像
 6. 接下来安装cnpm：`npm install -g cnpm`
 7. 查看是否安装成功（显示“cnpm不是内部命令”的话，关闭cmd窗口重新打开就好）：
-![image.png](https://pic.linjq.top/img/202409051526157.png)
+![image.png](https://img.linjq.top/202409051526157.png)
 # 安装和配置Git
 
 ## 安装
@@ -47,7 +47,7 @@ aside:
 
 这里安装了Standalone版本，下载后直接按照默认一直next即可。
 选择默认编辑器的时候，这里选了本机的sublime，可以根据自己的需求选择
-![image.png](https://pic.linjq.top/img/202409051552961.png)
+![image.png](https://img.linjq.top/202409051552961.png)
 其他具体配置选项解释可以看：[Git安装详解（写吐了，看完不后悔）-CSDN博客](https://blog.csdn.net/qq_45730223/article/details/131693287)
 ## 配置
 
@@ -61,7 +61,7 @@ git config --global user.email "你的邮箱"
 ssh-keygen -t rsa -C "你的邮箱"
 ```
 可以看到C盘下已经生成了私钥(id_rsa)和公钥(id_rsa.pub)：
-![image.png](https://pic.linjq.top/img/202409051548414.png)
+![image.png](https://img.linjq.top/202409051548414.png)
 打开`github->setting->SSH and GPG keys->Add new SSH Key`，把`id_rsa.pub`中的内容粘贴进去。
 输入命令测试连接：
 ```
@@ -72,9 +72,9 @@ ssh -T git@github.com
 ## 旧电脑上的操作
 
 1. 新建分支hexo_source
-![image.png](https://pic.linjq.top/img/202409051547657.png)
+![image.png](https://img.linjq.top/202409051547657.png)
 2. 在setting-><font style="color:rgb(31, 35, 40);">General</font>处，把默认分支切换成hexo_source
-![image.png](https://pic.linjq.top/img/202409051548194.png)
+![image.png](https://img.linjq.top/202409051548194.png)
 3. 把仓库clone到本地：`git clone 仓库链接`，除了`.git`文件外，其他全部删除
 4. 把原来的Hexo原文件夹下的目录中除了`.deploy_git`外，全部拷贝到clone下来的文件夹中
 5. 由于我是使用obsidian来写博客的，它会自动生成一个`.obsidian`文件，这个文件会导致`git push`报错，因此需要在.gitignore中添加一行`source/_posts/.obsidian/`来忽略掉这个文件夹
@@ -109,7 +109,7 @@ deploy:
 3. 执行命令安装Hexo（可能要管理员）:`npm install -g hexo-cli`
 
 4. 我这里显示成功安装了Hexo，但是报错：
-![image.png](https://pic.linjq.top/img/202409051549339.png)
+![image.png](https://img.linjq.top/202409051549339.png)
 5. 输入以下命令后成功解决：
 ```
 rm -rf node_modules # 删除项目目录下的 node_modules 目录，其中包含所有安装的 npm 包
@@ -121,3 +121,4 @@ npm install --force # 强制重新安装所有包，即使它们已经存在于 
 ```
 git pull origin hexo_source
 ```
+

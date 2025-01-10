@@ -10,8 +10,8 @@ tags:
   - Butterfly
 mathjax: 
 aside: 
-cover: https://pic.linjq.top/img/default_post_cover.png
-top_img: https://pic.linjq.top/img/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
 description: MathJax数学公式在博客内容中的显示
 ---
 
@@ -30,4 +30,4 @@ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
 ```
 
 ## 效果
-![](https://pic.linjq.top/img/202407091645676.jpg)
+![](https://img.linjq.top/202407091645676.jpg)

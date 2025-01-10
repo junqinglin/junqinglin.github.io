@@ -1,8 +1,8 @@
 ---
 title: 如何将Github仓库与本地仓库同步
 auther: ljq
-top_img: 'https://pic.linjq.top/img/top_img.jpg'
-cover: 'https://pic.linjq.top/img/default_post_cover.png'
+top_img: 'https://img.linjq.top/top_img.jpg'
+cover: 'https://img.linjq.top/default_post_cover.png'
 categories:
   - 折腾
 tags:
@@ -18,15 +18,15 @@ aside:
 {% endnote %}
 # 创建Github仓库
 这里我创建了一个私有库，由于是自己研究项目的代码，所以不设为公开了
-![image.png](https://pic.linjq.top/img/202409281355923.png)
+![image.png](https://img.linjq.top/202409281355923.png)
 # 本地新建仓库
 在本地新建一个目录，打开git命令行，输入`git init`进行初始化
-![image.png](https://pic.linjq.top/img/202409281358578.png)
+![image.png](https://img.linjq.top/202409281358578.png)
 # 关联远程仓库
 输入命令关联远程仓库：`git remote add origin [远程仓库URL]`
 # 推送到远程仓库
 在本地目录下新建代码文件：
-![image.png](https://pic.linjq.top/img/202409281434269.png)
+![image.png](https://img.linjq.top/202409281434269.png)
 执行命令推送到github：
 ```
 git add .

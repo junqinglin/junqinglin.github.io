@@ -1,8 +1,8 @@
 ---
 title: Graham-scan算法求凸包
 auther: ljq
-top_img: 'https://pic.linjq.top/img/top_img.jpg'
-cover: 'https://pic.linjq.top/img/default_post_cover.png'
+top_img: 'https://img.linjq.top/top_img.jpg'
+cover: 'https://img.linjq.top/default_post_cover.png'
 categories:
   - 算法
 tags:
@@ -16,30 +16,30 @@ aside:
 ---
 # 凸包是什么
 凸包的概念为：在平面上能包含所有给定点的**最小凸多边形**叫做凸包。看概念很抽象，打个比方，假如在一块木板上钉若干钉子，我们拿一个橡皮筋套上去，把所有的钉子都包围在里面，那么这个橡皮筋所形成的多边形便是凸包。
-![image.png](https://pic.linjq.top/img/202410161551037.png)
+![image.png](https://img.linjq.top/202410161551037.png)
 
 # Graham-scan算法
 ## 原理
 求解凸包一般可以用Andrew算法或Graham-scan算法，这里介绍Graham-scan的算法流程：
 1. 首先找到一定在凸包上的一个点，一般来说，我们会找在最左下角的点，即纵坐标最小的点，若纵坐标相同，则找横坐标更小的点（可以证明这个点一定在凸包上：假设这个点不在凸包上，那么肯定有纵坐标比它小的点在凸包上，但是没有纵坐标比这个点更小的点，因此它肯定在凸包上）。下图中最小的点为B
- ![image.png](https://pic.linjq.top/img/202410161558067.png)
+ ![image.png](https://img.linjq.top/202410161558067.png)
 3. 以上面找到的点为原点，对其他点进行极角排序，排序后顺序应该是：B,C,E,D,F,A
 4. 新建一个栈存储凸包，首先把前两个点先入栈，这里先把B和C入栈，第三个点作为当前点
 5. 取出栈顶的两个点，将**栈顶两个点组成的向量**和**栈顶点与当前点组成的向量**进行叉乘（这里首先是$\vec{BC}$和$\vec{CD}$），判断当前点的拐向，若叉乘大于0，则当前点是向左拐，否则是向右拐。
-![image.png](https://pic.linjq.top/img/202410161606730.png)
+![image.png](https://img.linjq.top/202410161606730.png)
 6. 如果叉乘小于0，则把栈顶点出栈，重复执行第5步，直到叉乘大于0或者栈中的点数量小于2就把当前点压入栈
 
 例子：
 * 这里首先判断点E相对BC的拐向，由于点E在左边，直接进栈，这时栈中的元素为$[B, C, E]$
-![image.png](https://pic.linjq.top/img/202410161606730.png)
+![image.png](https://img.linjq.top/202410161606730.png)
 * 接着判断点D相对于CE的拐向，在左边，也是直接进栈，这时栈中的元素为$[B, C, E, D]$
-![image.png](https://pic.linjq.top/img/202410161614386.png)
+![image.png](https://img.linjq.top/202410161614386.png)
 * 接着判断点F相对于ED的拐向，在右边，把栈顶元素出栈，这时栈中的元素为$[B, C, E]$
 * 继续判断点F相对于CE的拐向，在左边，直接进栈，这时栈中的元素为$[B, C, E, F]$
-![image.png](https://pic.linjq.top/img/202410161616495.png)
+![image.png](https://img.linjq.top/202410161616495.png)
 * 继续判断点A相对于EF的拐向，在左边，直接进栈，这时栈中的元素为$[B, C, E, F, A]$
 * 至此，所有点都遍历完了，栈中所有的点就是凸包上的点
-![image.png](https://pic.linjq.top/img/202410161618009.png)
+![image.png](https://img.linjq.top/202410161618009.png)
 ## 代码
 JS的代码：
 ```

@@ -1,8 +1,8 @@
 ---
 title: 每日算法刷题Record
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 categories:
   - 算法
 abbrlink: c757a24b

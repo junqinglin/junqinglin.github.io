@@ -1,7 +1,7 @@
 ---
 title: JWT令牌技术
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
+top_img: https://img.linjq.top/top_img.jpg
 categories:
   - 后端
 tags:
@@ -11,7 +11,7 @@ abbrlink: db2d9172
 date: 2024-01-15 16:42:30
 mathjax: 
 aside: 
-cover: https://pic.linjq.top/img/default_post_cover.png
+cover: https://img.linjq.top/default_post_cover.png
 description: 登录认证常用技术-JWT技术介绍
 ---
 # 前言
@@ -56,7 +56,7 @@ JWT是一个开放标准(RFC 7519)（[官网](https://jwt.io/)），全称JSON W
 - 第三部分：Signature(签名），防止Token被篡改、确保安全性。将header、payload，并加入指定秘钥，通过指定签名算法计算而来。
 
 签名的目的就是为了防JWT令牌被篡改，而正是因为jwt令牌最后一个部分数字签名的存在，所以整个JWT令牌是非常安全可靠的。一旦JWT令牌当中任何一个部分、任何一个字符被篡改了，整个令牌在校验的时候都会失败，所以它是非常安全可靠的。
-![](https://pic.linjq.top/img/202407091645675.png)
+![](https://img.linjq.top/202407091645675.png)
 JWT是如何将原始的JSON格式数据，转变为字符串的呢？其实在生成JWT令牌时，会对JSON格式的数据进行base64编码。
 
 # 应用场景
@@ -116,7 +116,7 @@ public void genJwt(){
 以上代码生成密钥：``eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNzA1MzkyOTc3LCJ1c2VybmFtZSI6IlRvbSJ9.Q4p8mqwWjJ2EX5_NHGcYSvmAiHPEWCfM64iKsb_NdMQ``
 
 JWT官网可以解析：
-![](https://pic.linjq.top/img/202407091645671.png)
+![](https://img.linjq.top/202407091645671.png)
 ## 校验JWT
 
 ```

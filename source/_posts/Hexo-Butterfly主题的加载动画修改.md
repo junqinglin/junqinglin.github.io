@@ -10,8 +10,8 @@ tags:
   - Butterfly
 mathjax: 
 aside: 
-cover: https://pic.linjq.top/img/default_post_cover.png
-top_img: https://pic.linjq.top/img/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
 description: 博客加载动画的魔改实现
 ---
 
@@ -20,7 +20,7 @@ description: 博客加载动画的魔改实现
 # Step1 
 
 首先从[codepen](https://codepen.io/)上找到自己想要的动画，最好是纯CSS的，这里以[pokeball](https://codepen.io/internette/pen/LZBxQw)为例。我们可以先把它下载下来。
-![](https://pic.linjq.top/img/202407091645664.png)
+![](https://img.linjq.top/202407091645664.png)
 解压后打开``dist``文件夹，里面有``index.html``和``style.css``文件，待会要用到。
 
 # Step2
@@ -549,4 +549,4 @@ preloader:
 ```
 
 # 效果
-![](https://pic.linjq.top/img/202407091645672.gif)
+![](https://img.linjq.top/202407091645672.gif)

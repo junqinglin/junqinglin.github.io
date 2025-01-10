@@ -1,7 +1,7 @@
 ---
 title: 自定义注解，通过AOP实现公共字段填充
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
+top_img: https://img.linjq.top/top_img.jpg
 abbrlink: 2454e4a5
 date: 2024-03-25 20:32:04
 categories:
@@ -10,7 +10,7 @@ tags:
   - Java
 mathjax: 
 aside: 
-cover: https://pic.linjq.top/img/default_post_cover.png
+cover: https://img.linjq.top/default_post_cover.png
 description: 要介绍反射、注解、AOP相关知识，并介绍如何通过AOP实现公共字段填充
 ---
 # 问题描述
@@ -213,7 +213,7 @@ private void pt();
 ```
 #### 三、初始化Bean
  判定bean对应的类中的方法是否匹配到任意切入点。
-![](https://pic.linjq.top/img/202407091645674.png)
+![](https://img.linjq.top/202407091645674.png)
 如果匹配失败，则创建原始对象，如UserDao(匹配失败说明它不需要增强，直接调用原始对象的方法即可)。
 如果匹配成功，则创建原始对象（目标对象）的代理对象，如BookDao。
 
@@ -251,7 +251,7 @@ execution（public User com..UserService.findById(..))
 execution(* *..*Service+.*(..))
 ```
 ### AOP通知类型
-![](https://pic.linjq.top/img/202407091645673.png)
+![](https://img.linjq.top/202407091645673.png)
 #### 前置通知@Before
 追加功能到方法执行前,类似于在代码1或者代码2添加内容  
 ```cpp

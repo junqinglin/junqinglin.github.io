@@ -1,8 +1,8 @@
 ---
 title: Hexo-Butterfly加入Algolia搜索功能
 auther: ljq
-top_img: https://pic.linjq.top/img/top_img.jpg
-cover: https://pic.linjq.top/img/default_post_cover.png
+top_img: https://img.linjq.top/top_img.jpg
+cover: https://img.linjq.top/default_post_cover.png
 abbrlink: 873691fe
 date: 2024-07-11 14:28:29
 categories:
@@ -16,9 +16,9 @@ description: 博客功能"搜索"的实现
 ---
 # 注册
 1. 首先在官网[Sign Up | Algolia](https://dashboard.algolia.com/users/sign_up)注册账号，也可以用`github`直接登录
-![image.png](https://pic.linjq.top/img/202407111433802.png)
+![image.png](https://img.linjq.top/202407111433802.png)
 2. 左下角`Data sources -> indices -> Create Index` 创建Index，记住名字，下面有用
-![image.png](https://pic.linjq.top/img/202407111439924.png)
+![image.png](https://img.linjq.top/202407111439924.png)
 # 安装依赖并写入配置
 
 1. 在博客根目录下，打开命令窗口执行：
@@ -65,6 +65,6 @@ hexo clean && hexo g && hexo s
 ```
 6. 最后，如果写了新的文章，准备部署，可在`hexo generate`后`hexo deploy`前执行`hexo algolia`
 # 效果
-![image.png](https://pic.linjq.top/img/202407111510966.png)
+![image.png](https://img.linjq.top/202407111510966.png)
 # 参考文章
 [基于 Hexo 键入搜索功能 | 唐志远 (fe32.top)](https://fe32.top/articles/hexo1607/)
