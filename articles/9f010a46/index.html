@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>算法刷题记录-其他 | LJQ</title><meta name="author" content="ljq"><meta name="copyright" content="ljq"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="日常的算法刷题记录之其他篇，主要是简要写一些思路和实现代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法刷题记录-其他">
+<meta property="og:url" content="https://junqinglin.github.io/articles/9f010a46/">
+<meta property="og:site_name" content="LJQ">
+<meta property="og:description" content="日常的算法刷题记录之其他篇，主要是简要写一些思路和实现代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.linjq.top/default_post_cover.png">
+<meta property="article:published_time" content="2024-09-09T06:25:52.000Z">
+<meta property="article:modified_time" content="2024-12-30T12:22:05.944Z">
+<meta property="article:author" content="ljq">
+<meta property="article:tag" content="ljq">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.linjq.top/default_post_cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://junqinglin.github.io/articles/9f010a46/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"XELHA8EAB4","apiKey":"48185e8787d151cf312782550c78e85f","indexName":"blog_search","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ljq","link":"链接: ","source":"来源: LJQ","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法刷题记录-其他',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-30 20:22:05'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/fonts/font.css"><link rel="stylesheet" href="/css/pagination_modification.css"><link rel="stylesheet" href="/css/hometop.css"><link rel="stylesheet" href="/css/my_nav.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="pokeball-loading"><div class="pokeball" id="normal"></div><div class="pokeball" id="great"></div><div class="pokeball" id="ultra"></div><div class="pokeball" id="master"></div><div class="pokeball" id="safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = 'auto'
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa-solid fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-circle-info"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://img.linjq.top/top_img.jpg')"><nav id="nav"><div id="nav-group"><span id="blog-info"><a href="/" title="LJQ"><span class="site-name">LJQ</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa-solid fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-circle-info"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="random-post-button"><a class="site-page" onclick="toRandomPost()" title="随机前往一篇文章"><i class="fa-solid fa-dice"></i></a></div><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="菜单"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">算法刷题记录-其他</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-09T06:25:52.000Z" title="发表于 2024-09-09 14:25:52">2024-09-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-30T12:22:05.944Z" title="更新于 2024-12-30 20:22:05">2024-12-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法刷题记录-其他"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><div class="note blue modern"><p>日常的算法刷题记录之其他篇，主要是简要写一些思路和实现代码。</p>
+</div>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># [题目标题]</span><br><span class="line">## 简介</span><br><span class="line">* 难度: &#123;% label 简单 green %&#125;、&#123;% label 中等 orange %&#125;、&#123;% label 困难 red %&#125;</span><br><span class="line">* 其他Tags: &#123;% label xx blue %&#125;或无</span><br><span class="line">* 刷题日期: </span><br><span class="line">* 是否做出: ✅ or ❎</span><br><span class="line">* 来源: 每日一题 or 代码随想录 or 灵神基础算法精讲 or 灵神题集 ...</span><br><span class="line"></span><br><span class="line">## 思路</span><br><span class="line">## 代码</span><br></pre></td></tr></table></figure>
+<h1 id="最小元素和最大元素的最小平均值"><a href="#最小元素和最大元素的最小平均值" class="headerlink" title="最小元素和最大元素的最小平均值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-average-of-smallest-and-largest-elements/">最小元素和最大元素的最小平均值</a></h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label green">简单</mark> </li>
+<li>其他Tags: 无</li>
+<li>刷题日期: 2024.10.16</li>
+<li>是否做出: ✅</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>先排序，然后每次取第一个和最后一个num计算即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public double minimumAverage(int[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        int res = Integer.MAX_VALUE;</span><br><span class="line">        int n = nums.length;</span><br><span class="line">        for (int i = 0; i &lt; n / 2; i++) &#123;</span><br><span class="line">            res = Math.min(res, nums[i] + nums[n - i - 1]);</span><br><span class="line">        &#125;</span><br><span class="line">        return res / 2.0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三角形的最大高度"><a href="#三角形的最大高度" class="headerlink" title="三角形的最大高度"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-height-of-a-triangle/">三角形的最大高度</a></h1><h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label green">简单</mark> </li>
+<li>其他Tags: <mark class="hl-label blue">模拟</mark> </li>
+<li>刷题日期: 2024.10.15</li>
+<li>是否做出: ❎</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>可以用模拟的方法做，比较简单。但是我想要用数学的方法做，想了一会感觉被绕进去了哈哈哈，思路都乱了。下面介绍用数学的方法做：<br>如果球放在奇数行，则奇数行的总球数有：$1+3+5+…+2k-1&#x3D;\frac{(1+(2k-1))·k}{2}&#x3D;k^{2}$，假设放在奇数行的球有$n_{1}$个，则$k$的最大值为$\lfloor\sqrt{n_{1}}\rfloor$；<br>如果球放在偶数行，则偶数行的总球数有：$2+4+6+⋯+2k&#x3D;\frac{(2+2k)·k}{2}​&#x3D;k^{2}+k$，假设放在偶数行的球有$n_{2}$个，则$k$的最大值为$\lfloor\frac{-1+\sqrt{1+4n_{2}}}{2}\rfloor$；<br>分类讨论红球放奇数行还是蓝球放奇数行，假设<strong>红球放奇数行</strong>：</p>
+<ul>
+<li>可以求出红球最后能放的行为：$2\lfloor\sqrt{n_{1}}\rfloor-1$；</li>
+<li>可以求出蓝球最后能放的行为：$2\lfloor\frac{-1+\sqrt{1+4n_{2}}}{2}\rfloor$；</li>
+<li>其中的<strong>较小值加1</strong>即为三角形的最大高度（加1是因为红球和蓝球最后能放的行一定是不相等的，他们之间的差至少为1，因此较小的那个加1才是答案）<br>再求蓝球放奇数行的情况，取较大值即可。</li>
+</ul>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxHeightOfTriangle(int red, int blue) &#123;</span><br><span class="line">        return Math.max(maxHeight(red, blue), maxHeight(blue, red));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int maxHeight(int x, int y) &#123;</span><br><span class="line">        int odd = 2 * (int)(Math.sqrt(x)) - 1;</span><br><span class="line">        int even = 2 * (int)((-1 + Math.sqrt(1 + 4 * y)) / 2);</span><br><span class="line">        return Math.min(odd, even) + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="求出出现两次数字的-XOR-值"><a href="#求出出现两次数字的-XOR-值" class="headerlink" title="求出出现两次数字的 XOR 值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-xor-of-numbers-which-appear-twice/">求出出现两次数字的 XOR 值</a></h1><h2 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label green">简单</mark> </li>
+<li>其他Tags: <mark class="hl-label blue">模拟</mark> </li>
+<li>刷题日期: 2024.10.12</li>
+<li>是否做出: ✅</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>感觉做复杂了哈哈哈，因为题目说数组中的数字 要么 出现一次，要么出现两次，所以可以快排一次，如果和前一个数相同，说明它是第二次出现，直接异或。<br><strong>位运算一次遍历做法：</strong><br>遍历 nums，同时用一个 vis 集合记录遇到的数字，设 $x&#x3D;nums[i]$。</p>
+<ul>
+<li>如果 x 不在 vis 中，说明是第一次遇到，加入 vis。</li>
+<li>如果 x 在 vis 中，说明是第二次遇到（注意每个数至多出现两次），加入答案（异或）。<br>代码实现时，由于$nums[i]≤50$，可以用二进制数表示集合</li>
+</ul>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int duplicateNumbersXOR(int[] nums) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        for(int i = 1; i &lt; nums.length; i++)&#123;</span><br><span class="line">            if(nums[i] == nums[i - 1]) res ^= nums[i]; </span><br><span class="line">        &#125;</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//位运算</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int duplicateNumbersXOR(int[] nums) &#123;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        long vis = 0;</span><br><span class="line">        for (int x : nums) &#123;</span><br><span class="line">            if ((vis &gt;&gt; x &amp; 1) &gt; 0) &#123;</span><br><span class="line">                ans ^= x;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                vis |= 1L &lt;&lt; x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="优质数对的总数-II"><a href="#优质数对的总数-II" class="headerlink" title="优质数对的总数 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-number-of-good-pairs-ii/">优质数对的总数 II</a></h1><h2 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label orange">中等</mark> </li>
+<li>其他Tags: <mark class="hl-label blue">模拟</mark> </li>
+<li>刷题日期: 2024.10.11</li>
+<li>是否做出: ❎</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><p>分别统计 nums1和 nums2的频数。遍历nums2中出现过的数a，枚举 a×k 的倍数，如果在 nums1<br>​出现过就可以组成优质数对，更新结果。返回优质数对的总数。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public long numberOfPairs(int[] nums1, int[] nums2, int k) &#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map1 = new HashMap&lt;&gt;();</span><br><span class="line">        Map&lt;Integer, Integer&gt; map2 = new HashMap&lt;&gt;();</span><br><span class="line">        int max = 0;</span><br><span class="line">        long res = 0;</span><br><span class="line">        for(int num : nums1) &#123;</span><br><span class="line">            map1.put(num, map1.getOrDefault(num, 0) + 1);</span><br><span class="line">            if(num &gt; max) max = num;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int num : nums2) &#123;</span><br><span class="line">            map2.put(num, map2.getOrDefault(num, 0) + 1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        for(Integer num : map2.keySet()) &#123;</span><br><span class="line">            int base = 1;</span><br><span class="line">            //System.out.println(&quot;num: &quot; + num);</span><br><span class="line">            while(num * k * base &lt;= max)&#123;</span><br><span class="line">                if(map1.containsKey(num * k * base)) &#123;</span><br><span class="line">                    //System.out.println(num * k * base);</span><br><span class="line">                    res += 1L * map1.get(num * k * base) * map2.get(num);</span><br><span class="line">                &#125;</span><br><span class="line">                ++base;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="最佳观光组合"><a href="#最佳观光组合" class="headerlink" title="最佳观光组合"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-sightseeing-pair/">最佳观光组合</a></h1><h2 id="简介-4"><a href="#简介-4" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label orange">中等</mark> </li>
+<li>其他Tags: 无</li>
+<li>刷题日期: 2024.09.23</li>
+<li>是否做出: ❎</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h2><p>没做过类似的题，一开始看没思路，脑子里面除了暴力没有其他想法，看了灵神的才知道可以<strong>枚举右，维护左</strong>来做.<br>题目的$values[i] + values[j] + i - j$可以转化成:$(values[i] + i) + (values[j] - j)$这样就可以枚举j同时维护左边$values[i] + i$的最大值。</p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxScoreSightseeingPair(int[] values) &#123;</span><br><span class="line">        int mx = Integer.MIN_VALUE;</span><br><span class="line">        int res = 0;</span><br><span class="line">        for(int i = 0; i &lt; values.length; i++) &#123;</span><br><span class="line">            int temp = mx + values[i] - i;</span><br><span class="line">            if (temp &gt; res) &#123;</span><br><span class="line">                res = temp;</span><br><span class="line">            &#125;</span><br><span class="line">            if (values[i] + i &gt; mx) mx = values[i] + i;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="统计上升四元组"><a href="#统计上升四元组" class="headerlink" title="统计上升四元组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-increasing-quadruplets/">统计上升四元组</a></h1><h2 id="简介-5"><a href="#简介-5" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label red">困难</mark> </li>
+<li>其他Tags: 无</li>
+<li>刷题日期: 2024.09.10</li>
+<li>是否做出: ❎</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h2><p>太难了，见灵神题解：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-increasing-quadruplets/solutions/2080632/you-ji-qiao-de-mei-ju-yu-chu-li-pythonja-exja/">2552. 统计上升四元组 - 力扣（LeetCode）</a></p>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public long countQuadruplets(int[] nums) &#123;</span><br><span class="line">        int n = nums.length;</span><br><span class="line">        int[][] great = new int[n][n + 1];</span><br><span class="line">        for (int k = n - 2; k &gt;= 2; k--) &#123;</span><br><span class="line">            great[k] = great[k + 1].clone();</span><br><span class="line">            for (int x = 1; x &lt; nums[k + 1]; x++) &#123;</span><br><span class="line">                great[k][x]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        long ans = 0;</span><br><span class="line">        int[] less = new int[n + 1];</span><br><span class="line">        for (int j = 1; j &lt; n - 2; j++) &#123;</span><br><span class="line">            for (int x = nums[j - 1] + 1; x &lt;= n; x++) &#123;</span><br><span class="line">                less[x]++;</span><br><span class="line">            &#125;</span><br><span class="line">            for (int k = j + 1; k &lt; n - 1; k++) &#123;</span><br><span class="line">                if (nums[j] &gt; nums[k]) &#123;</span><br><span class="line">                    ans += less[nums[k]] * great[k][nums[j]];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="一个小组的最大实力值"><a href="#一个小组的最大实力值" class="headerlink" title="一个小组的最大实力值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-strength-of-a-group/">一个小组的最大实力值</a></h1><h2 id="简介-6"><a href="#简介-6" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>难度: <mark class="hl-label orange">中等</mark> </li>
+<li>其他Tags: <mark class="hl-label blue">动态规划</mark> </li>
+<li>刷题日期: 2024.09.03</li>
+<li>是否做出: ❎</li>
+<li>来源: 每日一题</li>
+</ul>
+<h2 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h2><p>分类讨论，这道题实际上是求所有元素都为整数的数组的子序列的最大积，从最大积的正负性入手。</p>
+<ul>
+<li>当数组仅有 1 个元素且为负数时，最大积为负数。</li>
+<li>当数组不包含正数，且负数元素小于等于 1 个时，最大积为 0。</li>
+<li>其他情况下，最大积为正数。那么如何求这个最大积呢？可以将所有非 0 元素求积，如果乘积为正数，则为最大积。如果乘积为负数，则说明乘积中包含奇数个负数，此时将这个乘积除以最大负数则为最大积。<br>From-力扣官方题解</li>
+</ul>
+<h2 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public long maxStrength(int[] nums) &#123;</span><br><span class="line">        int negCnt = 0;</span><br><span class="line">        int zeroCnt = 0;</span><br><span class="line">        int positiveCnt = 0;</span><br><span class="line">        long res = 1;</span><br><span class="line">        int maxNeg = -9;</span><br><span class="line">        for(int num : nums)&#123;</span><br><span class="line">            if(num &lt; 0)&#123;</span><br><span class="line">                negCnt++;</span><br><span class="line">                res *= num;</span><br><span class="line">                maxNeg = Math.max(maxNeg, num);</span><br><span class="line">            &#125;else if(num == 0)&#123;</span><br><span class="line">                zeroCnt++;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                res *= num;</span><br><span class="line">                positiveCnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(negCnt == 1 &amp;&amp; zeroCnt == 0 &amp;&amp; positiveCnt == 0)&#123;</span><br><span class="line">            return nums[0];</span><br><span class="line">        &#125;</span><br><span class="line">        if(negCnt &lt;= 1 &amp;&amp; positiveCnt == 0)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if(res &lt; 0)&#123;</span><br><span class="line">            return res / maxNeg;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://junqinglin.github.io">ljq</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://junqinglin.github.io/articles/9f010a46/">https://junqinglin.github.io/articles/9f010a46/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://junqinglin.github.io" target="_blank">LJQ</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://img.linjq.top/default_post_cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/articles/47578ff9/" title="算法刷题记录-栈与队列"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">算法刷题记录-栈与队列</div></div></a></div><div class="next-post pull-right"><a href="/articles/276feaba/" title="算法刷题记录-滑动窗口"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">算法刷题记录-滑动窗口</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ljq</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/junqinglin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.1.</span> <span class="toc-text">模板</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%85%83%E7%B4%A0%E5%92%8C%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="toc-number">2.</span> <span class="toc-text">最小元素和最大元素的最小平均值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E6%9C%80%E5%A4%A7%E9%AB%98%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text">三角形的最大高度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-number">3.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%82%E5%87%BA%E5%87%BA%E7%8E%B0%E4%B8%A4%E6%AC%A1%E6%95%B0%E5%AD%97%E7%9A%84-XOR-%E5%80%BC"><span class="toc-number">4.</span> <span class="toc-text">求出出现两次数字的 XOR 值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-number">4.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="toc-number">4.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">4.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E8%B4%A8%E6%95%B0%E5%AF%B9%E7%9A%84%E6%80%BB%E6%95%B0-II"><span class="toc-number">5.</span> <span class="toc-text">优质数对的总数 II</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-3"><span class="toc-number">5.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-3"><span class="toc-number">5.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-3"><span class="toc-number">5.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E4%BD%B3%E8%A7%82%E5%85%89%E7%BB%84%E5%90%88"><span class="toc-number">6.</span> <span class="toc-text">最佳观光组合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-4"><span class="toc-number">6.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-4"><span class="toc-number">6.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-4"><span class="toc-number">6.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E4%B8%8A%E5%8D%87%E5%9B%9B%E5%85%83%E7%BB%84"><span class="toc-number">7.</span> <span class="toc-text">统计上升四元组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-5"><span class="toc-number">7.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-5"><span class="toc-number">7.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-5"><span class="toc-number">7.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BB%84%E7%9A%84%E6%9C%80%E5%A4%A7%E5%AE%9E%E5%8A%9B%E5%80%BC"><span class="toc-number">8.</span> <span class="toc-text">一个小组的最大实力值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-6"><span class="toc-number">8.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-6"><span class="toc-number">8.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-6"><span class="toc-number">8.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/e1152316/" title="将Hexo博客从GithubPage移到云服务器">将Hexo博客从GithubPage移到云服务器</a><time datetime="2025-01-09T07:29:21.000Z" title="发表于 2025-01-09 15:29:21">2025-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/c22bd6d4/" title="七牛云图床配置教程">七牛云图床配置教程</a><time datetime="2024-12-30T12:23:29.000Z" title="发表于 2024-12-30 20:23:29">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/49de1c11/" title="Java过滤器(Filter)和拦截器(Interceptor)的区别">Java过滤器(Filter)和拦截器(Interceptor)的区别</a><time datetime="2024-11-18T12:50:41.000Z" title="发表于 2024-11-18 20:50:41">2024-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/2b056add/" title="Go语言实践案例">Go语言实践案例</a><time datetime="2024-11-04T12:23:44.000Z" title="发表于 2024-11-04 20:23:44">2024-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/29d80bdb/" title="Go语言入门：基础语法">Go语言入门：基础语法</a><time datetime="2024-11-02T13:07:15.000Z" title="发表于 2024-11-02 21:07:15">2024-11-02</time></div></div></div></div></div></div></main><footer id="footer" style="background: radial-gradient(circle, rgba(79,206,212,1) 0%, rgba(72,161,227,1) 86%)"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By ljq</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.linjq.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.linjq.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/pagination_modification.js"></script><script src="/js/my_nav.js"></script><script src="/ljq/random.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

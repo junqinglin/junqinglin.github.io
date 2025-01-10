@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Github图床 + PicGo + Obsidian | LJQ</title><meta name="author" content="ljq"><meta name="copyright" content="ljq"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Github图床搭建+PicGo和Obsidian搭配，提高效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github图床 + PicGo + Obsidian">
+<meta property="og:url" content="https://junqinglin.github.io/articles/a3d48504/">
+<meta property="og:site_name" content="LJQ">
+<meta property="og:description" content="Github图床搭建+PicGo和Obsidian搭配，提高效率">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.linjq.top/default_post_cover.png">
+<meta property="article:published_time" content="2024-07-08T08:59:05.000Z">
+<meta property="article:modified_time" content="2024-12-30T12:22:05.944Z">
+<meta property="article:author" content="ljq">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.linjq.top/default_post_cover.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://junqinglin.github.io/articles/a3d48504/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"XELHA8EAB4","apiKey":"48185e8787d151cf312782550c78e85f","indexName":"blog_search","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ljq","link":"链接: ","source":"来源: LJQ","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Github图床 + PicGo + Obsidian',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-30 20:22:05'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/fonts/font.css"><link rel="stylesheet" href="/css/pagination_modification.css"><link rel="stylesheet" href="/css/hometop.css"><link rel="stylesheet" href="/css/my_nav.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"><link rel="stylesheet" href="/css/hometop.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="pokeball-loading"><div class="pokeball" id="normal"></div><div class="pokeball" id="great"></div><div class="pokeball" id="ultra"></div><div class="pokeball" id="master"></div><div class="pokeball" id="safari"></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = 'auto'
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa-solid fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-circle-info"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://img.linjq.top/top_img.jpg')"><nav id="nav"><div id="nav-group"><span id="blog-info"><a href="/" title="LJQ"><span class="site-name">LJQ</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa-solid fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa-solid fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa-solid fa-circle-info"></i><span> 关于</span></a></div></div></div><div id="nav-right"><div id="random-post-button"><a class="site-page" onclick="toRandomPost()" title="随机前往一篇文章"><i class="fa-solid fa-dice"></i></a></div><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="fas fa-search fa-fw"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="菜单"><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">Github图床 + PicGo + Obsidian</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-08T08:59:05.000Z" title="发表于 2024-07-08 16:59:05">2024-07-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-30T12:22:05.944Z" title="更新于 2024-12-30 20:22:05">2024-12-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">845</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Github图床 + PicGo + Obsidian"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="创建Github图床"><a href="#创建Github图床" class="headerlink" title="创建Github图床"></a>创建Github图床</h1><h2 id="新建github仓库作为图床"><a href="#新建github仓库作为图床" class="headerlink" title="新建github仓库作为图床"></a>新建github仓库作为图床</h2><ol>
+<li>新建一个仓库，设置成public<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529399.png" alt="Pasted image 20240708182206"></li>
+<li>git clone到本地<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529400.png" alt="Pasted image 20240708182749"></li>
+<li>在刚刚clone下来的文件夹中，新建一个img文件夹，用于存放图片<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529401.png" alt="Pasted image 20240708182941"></li>
+<li>按顺序执行以下命令提交<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将更改提交 </span><br><span class="line">git add . </span><br><span class="line">git commit -m &quot;更新图片&quot; </span><br><span class="line"># 推送至github仓库 </span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h2><p>上面的操作已经创建完成了基于Github仓库的图床，直接访问Github仓库的图片是比较慢的。我这里采用了Vercel部署的方式。</p>
+<ol>
+<li>进入<a target="_blank" rel="noopener" href="https://vercel.com/dashboard">Vercel控制面板</a>新建项目，并<code>通过Github继续</code>，选择导入刚刚创建的仓库，然后直接部署即可<br> <img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529402.png" alt="Pasted image 20240709141142"><br> <img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529403.png" alt="Pasted image 20240709141204"></li>
+<li>选择右上角的<code>Manage Domains</code>添加新的域名，添加一个自己域名的二级域名，然后在你对应的域名解析控制台添加对应解析(这个可以自己上网搜)，等待生效。<br> <img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529404.png" alt="Pasted image 20240709141820"><br> <img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529405.png" alt="Pasted image 20240709142046"></li>
+<li>通过<code>自定义域名+资源路径</code>即可访问到对应的资源，例如我这里为<code>https://img.linjq.top/cover1.jpg</code></li>
+</ol>
+<h1 id="使用PicGo"><a href="#使用PicGo" class="headerlink" title="使用PicGo"></a>使用PicGo</h1><h2 id="PicGo简介"><a href="#PicGo简介" class="headerlink" title="PicGo简介"></a>PicGo简介</h2><p>PicGo是一个用于快速上传图片并获取图片 URL 链接的工具，之前我们每次上传新的图片都需要，运行以下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将更改提交 </span><br><span class="line">git add . </span><br><span class="line">git commit -m &quot;更新图片&quot; </span><br><span class="line"># 推送至github仓库 </span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>而使用PicGo之后，我们可以直接拖拽就可以完成上传。</p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li><p>下载<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></p>
+</li>
+<li><p>在github主页settings-&gt;Personal access tokens-&gt;Token(class)中选择<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529406.png" alt="Pasted image 20240708214657"><br>然后填写配置项。Note是token的注释，expiration是token的有效期，可以选择永久，但是github官方并不推荐，因此我们选择90天。接着勾选配置项<code>repo</code>。<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529407.png" alt="Pasted image 20240708214914"></p>
+</li>
+<li><p>选择图床设置-&gt;GitHub进行设置。仓库名的格式是<code>用户名/仓库</code>，分支一般我们选择<code>main</code>分支即可，token填写刚刚获取的token，存储路径按照自己的实际写，存在哪个文件夹就写什么，我这里是<code>img/</code>，域名可以写刚刚Vercel部署使用的自已的域名。然后记得点击确定以生效，然后可以点击<code>设为默认图床</code>来确保上传的图床是GitHub。图片的访问路径为<code>域名+存储路径+图片名称</code><br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529408.png" alt="Pasted image 20240709142719"></p>
+</li>
+<li><p>接着拖动文件即可自动上传到github<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091529409.png" alt="Pasted image 20240709131857"></p>
+</li>
+</ol>
+<h1 id="Obsidian搭配PicGo"><a href="#Obsidian搭配PicGo" class="headerlink" title="Obsidian搭配PicGo"></a>Obsidian搭配PicGo</h1><p>我们现在已经可以使用PicGo自动上传图片，但是效率上还是不够，比如说在写文章的时候，我们需要：</p>
+<ul>
+<li>使用PicGo上传图片</li>
+<li>复制图片链接</li>
+<li>粘贴链接到Obsidian或Typora<br>这还是有点繁琐，我们能不能直接在Obsidian中粘贴图片，然后它自动上传到图床上面呢？答案是可以！</li>
+</ul>
+<ol>
+<li>在obsidian插件库中安装<code>Image Auto Upload</code>插件<br><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/20240709145038.png" alt="image.png"></li>
+<li>按照默认设置即可。之后我们可以将图片粘贴或者拖动到Obsidian中，插件和PicGo会自动上传照片。<br><strong>注意：一定要先打开 Picgo，才能实现自动上传</strong></li>
+<li>那么之前笔记的图片如何上传呢？我们可以按下命令行快捷键 <code>Ctrl / Command + P</code>，并选择 <code>upload all images</code>就可以把之前笔记的图片都上传了。<br> <img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/202407091528063.png" alt="image.png"></li>
+</ol>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://www.fomal.cc/posts/d7fb1ba1.html#1">免费图床综合教程 | Fomalhaut🥝</a></li>
+<li><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#github%E5%9B%BE%E5%BA%8A">配置手册 | PicGo</a></li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/75765#!">【Obsidian绝配！】为你的OB搭建专属图床，保姆级教程！ - 少数派 (sspai.com)</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://junqinglin.github.io">ljq</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://junqinglin.github.io/articles/a3d48504/">https://junqinglin.github.io/articles/a3d48504/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://junqinglin.github.io" target="_blank">LJQ</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://img.linjq.top/default_post_cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/articles/2454e4a5/" title="自定义注解，通过AOP实现公共字段填充"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">自定义注解，通过AOP实现公共字段填充</div></div></a></div><div class="next-post pull-right"><a href="/articles/5d1e3b24/" title="博客魔改记录"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">博客魔改记录</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/articles/d06ae077/" title="Hexo-Butterfly主题下的MathJax数学公式显示"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">Hexo-Butterfly主题下的MathJax数学公式显示</div></div></a></div><div><a href="/articles/216710e/" title="Hexo-Butterfly主题的加载动画修改"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-23</div><div class="title">Hexo-Butterfly主题的加载动画修改</div></div></a></div><div><a href="/articles/873691fe/" title="Hexo-Butterfly加入Algolia搜索功能"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-11</div><div class="title">Hexo-Butterfly加入Algolia搜索功能</div></div></a></div><div><a href="/articles/25281569/" title="Hexo-Butterfly导航栏魔改"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-10</div><div class="title">Hexo-Butterfly导航栏魔改</div></div></a></div><div><a href="/articles/731a89a9/" title="Hexo-Butterfly应用文章双栏后卡片高度不一致"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-27</div><div class="title">Hexo-Butterfly应用文章双栏后卡片高度不一致</div></div></a></div><div><a href="/articles/a55255d2/" title="Hexo-Butterfly自定义全局字体"><img class="cover" src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/default_post_cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-24</div><div class="title">Hexo-Butterfly自定义全局字体</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://img.linjq.top/lazyload.gif" data-lazy-src="https://img.linjq.top/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ljq</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/junqinglin" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAGithub%E5%9B%BE%E5%BA%8A"><span class="toc-number">1.</span> <span class="toc-text">创建Github图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAgithub%E4%BB%93%E5%BA%93%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A"><span class="toc-number">1.1.</span> <span class="toc-text">新建github仓库作为图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vercel%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.</span> <span class="toc-text">Vercel部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8PicGo"><span class="toc-number">2.</span> <span class="toc-text">使用PicGo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PicGo%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">PicGo简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.2.</span> <span class="toc-text">使用步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Obsidian%E6%90%AD%E9%85%8DPicGo"><span class="toc-number">3.</span> <span class="toc-text">Obsidian搭配PicGo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">4.</span> <span class="toc-text">参考文章</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/e1152316/" title="将Hexo博客从GithubPage移到云服务器">将Hexo博客从GithubPage移到云服务器</a><time datetime="2025-01-09T07:29:21.000Z" title="发表于 2025-01-09 15:29:21">2025-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/c22bd6d4/" title="七牛云图床配置教程">七牛云图床配置教程</a><time datetime="2024-12-30T12:23:29.000Z" title="发表于 2024-12-30 20:23:29">2024-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/49de1c11/" title="Java过滤器(Filter)和拦截器(Interceptor)的区别">Java过滤器(Filter)和拦截器(Interceptor)的区别</a><time datetime="2024-11-18T12:50:41.000Z" title="发表于 2024-11-18 20:50:41">2024-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/2b056add/" title="Go语言实践案例">Go语言实践案例</a><time datetime="2024-11-04T12:23:44.000Z" title="发表于 2024-11-04 20:23:44">2024-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/articles/29d80bdb/" title="Go语言入门：基础语法">Go语言入门：基础语法</a><time datetime="2024-11-02T13:07:15.000Z" title="发表于 2024-11-02 21:07:15">2024-11-02</time></div></div></div></div></div></div></main><footer id="footer" style="background: radial-gradient(circle, rgba(79,206,212,1) 0%, rgba(72,161,227,1) 86%)"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2025 By ljq</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.linjq.top/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.linjq.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+      GLOBAL_CONFIG_SITE.isPost && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="/js/pagination_modification.js"></script><script src="/js/my_nav.js"></script><script src="/ljq/random.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

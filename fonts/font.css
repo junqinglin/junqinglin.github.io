@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'DingTalk-JinBuTi';
+  font-display: swap;
+  src: url('DingTalk-JinBuTi.woff2') format('woff2'),
+       url('DingTalk-JinBuTi.woff') format('woff'),  /*chrome、firefox */
+       url('DingTalk-JinBuTi.ttf') format('truetype'),  /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
